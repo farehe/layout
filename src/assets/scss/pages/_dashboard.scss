@@ -1,0 +1,44 @@
+@use "../abstracts/mixins" as *;
+
+
+.dashboardWrapper{
+    height: 100vh;
+    position: relative;
+}
+
+.equitySymbolBalanceWrapper{
+    position: absolute;
+    translate: -50% -50%;
+    top: 50%;
+    left: 50%;
+    width: 20em;
+    max-width: 100%;
+
+}
+
+.homeWrapper{
+    grid-template-columns: 24em 1fr;
+    @include breakpoint('small'){
+        grid-template-columns: 1fr;
+    }
+}
+
+.profileAndTradesCard{
+
+}
+
+.coinSwiper{
+    background-color: var(--surface2);
+    &:hover{
+        background-color: var(--surface4);
+    }
+
+    &.selectedCoin{
+        background-color: var(--brand);
+        color: #fff;
+        .textSecondary{
+            color: #fff;
+            opacity: 0.56;
+        }
+    }
+}

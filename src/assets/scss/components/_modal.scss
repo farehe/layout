@@ -1,0 +1,74 @@
+@use "../abstracts/mixins" as *;
+
+.xr-modal-wrapper {
+    position: fixed;
+    z-index: 1300;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+
+    
+    &.center{
+        align-items: center;
+        justify-content: center;
+    }
+    &.left{
+        // align-items: center;
+        justify-content: flex-start;
+    }
+
+
+    @include breakpoint('small'){
+        &.bottom-sm{
+            align-items: end;
+            justify-content: center;
+            top: 4em
+        }
+        .xr-modal-paper{
+            border-bottom-left-radius: 0!important;
+            border-bottom-right-radius: 0!important;
+        }
+    }
+    &.MuiModal-hidden {
+        visibility: hidden;
+    }
+
+
+    .xr-modal-paper {
+        background-color: var(--modal-paper-bg);
+        border-radius: calc(var(--el-border-radius) / 1.5);
+        outline: 0.14em solid var(--modal-border-color);
+        //   padding: 1em;
+        // width: 100%;
+        width: 35em;
+        max-width: 100%;
+        // margin: 0 1em;
+        box-shadow: var(--shadow-1);
+        // outline: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        font-size: var(--fs-sm);
+        will-change: transform opacity height;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+   
+}
+
+.xr-modal-backdrop {
+
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    // background-color: rgba(0, 0, 0, 0.5);
+    // background-color: hsla(0, 0%, 45%, 0.27);
+    background-color: var(--modal-backdrop-bg);;
+    // backdrop-filter: blur(1px);
+    -webkit-tap-highlight-color: transparent;
+}

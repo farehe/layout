@@ -1,0 +1,78 @@
+@use '../abstracts/mixins' as *;
+.xr-avatar {
+    --avatar-size: 2.75em;
+    // --avatar-padding: 0.4em;
+    --avatar-bg: var(--surface-secondary);
+    --avatar-color: var(--text);
+    // --avatar-height: 2em;
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    // background-color: var(--border-1-light);
+    color: var(--avatar-color);
+    // padding: var(--avatar-padding);
+    font-size: var(--fs-sm);
+    border-radius: var(--el-border-radius);
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+    }
+
+    &.circle {
+        border-radius: 50%;
+    }
+
+    &.xxsmall {
+        --avatar-size: 1.5em;
+    }
+    &.xsmall {
+        --avatar-size: 24px;
+    }
+    &.small {
+        --avatar-size: 36px;
+    }
+    &.medium {
+        --avatar-size: 40px;
+    }
+    &.medium-2 {
+        --avatar-size: 48px;
+    }
+
+    &.large {
+        --avatar-size: 58px;
+    }
+
+    &.xlarge {
+        --avatar-size: 64px;
+    }
+    &.xxlarge {
+        --avatar-size: 120px;
+    }
+
+
+    &.filled {
+        background-color: var(--avatar-bg);
+        &.primary{
+            --avatar-bg: var(--brand);
+            --avatar-color: #fff
+        }
+    }
+    &.filled-2 {
+        background-color: var(--surface2);
+        
+    }
+
+    
+  @include breakpoint('small'){
+    font-size: var(--fs-md);
+    --avatar-size: 3.5em;
+
+    
+    &.medium-sm {
+        --avatar-size: 2.5em;
+    }
+    &.small-sm {
+        --avatar-size: 2em;
+    }
+  }
+}
